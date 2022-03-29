@@ -89,7 +89,7 @@ TEST_F(personen_service_test, speichern_happyDay_personIsPassedToRepo)
 	
 	
 	EXPECT_CALL(blacklistMock, is_allowed(_)).WillOnce(Return(true));
-	EXPECT_CALL(repoMock, saveOrUpdate(validPerson)).Times(1);
+	EXPECT_CALL(repoMock, saveOrUpdate(_)).Times(1);
 	
 	// Act
 	object_under_test.speichern(validPerson);
@@ -101,7 +101,7 @@ TEST_F(personen_service_test, speichern_happyDay_personIsPassedToRepo)
 TEST_F(personen_service_test, speichern_xyz_personIsPassedToRepo)
 {
 	person result;
-	
+	EXPECT_CALL(blacklistMock, is_allowed(_)).WillOnce(Return(true));
 	EXPECT_CALL(repoMock, saveOrUpdate(_)).Times(1).WillOnce(DoAll(SaveArg<0>(&result)));
 	// Act
 	object_under_test.speichern("Peter","Schmidt");
