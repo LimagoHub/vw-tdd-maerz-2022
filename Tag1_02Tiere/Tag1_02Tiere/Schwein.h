@@ -14,6 +14,8 @@ private:
 	}
 
 public:
+
+	
 	schwein(std::string name = "nobody") :gewicht(10)
 	{
 		set_name(name);
