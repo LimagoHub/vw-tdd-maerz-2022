@@ -39,6 +39,9 @@
     <ClInclude Include="personen_service_execption.h">
       <Filter>services</Filter>
     </ClInclude>
+    <ClInclude Include="blacklist_service.h">
+      <Filter>Headerdateien</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
