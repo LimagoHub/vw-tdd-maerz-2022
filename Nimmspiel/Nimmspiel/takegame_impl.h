@@ -1,36 +1,43 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include <string>
 #include "game.h"
 class takegame_impl: public game
 {
-private:
-	int stones;
-	bool gameover;
 	
+	int stones;
+	int move;
+
+	bool is_gameover()
+	{
+		return stones < 1;
+	}
+
+	void do_moves()
+	{
+		spielerzug();
+		computerzug();
+	}
+
 	void computerzug()
 	{
+		if (is_gameover()) return;
+		
 		std::vector<int> moves{ 3,1,1,2 };
-		if(stones < 1)
-		{
-			std::cout << "Du loser!" << std::endl;
-			gameover = true;
-			return;
-		}
-		if (stones == 1)
-		{
-			std::cout << "Du hast nut Glueck gehabt!" << std::endl;
-			gameover = true;
-			return;
-		}
-		int move = moves[stones % 4];
+		
+		
+		move = moves[stones % 4];
 		std::cout << "Computer nimmt " << move << " Steine." << std::endl;
-		stones -= move;
+		
+		terminate_move("Computer");
 	}
 
 	void spielerzug()
 	{
-		int move;
+		if (is_gameover()) return;
+		
+		
 		while(true)
 		{
 			std::cout << " Es gibt " << stones << " Steine. Bitte nehmen Sie 1,2 oder 3!" << std::endl;
@@ -38,16 +45,35 @@ private:
 			if (move >= 1 && move <= 3) break;
 			std::cout << "Ungueltiger Zug!";
 		}
-		stones -= move;
+		
+		terminate_move("Spieler");
 		
 	}
-	void do_moves()
+
+
+
+
+	void terminate_move(std::string player_name)
 	{
-		spielerzug();
-		computerzug();
+		update_game_state();
+		show_gameover_message_when_game_is_over(player_name);
 	}
+	
+	void show_gameover_message_when_game_is_over(std::string player_name)
+	{
+		if (is_gameover())
+		{
+			std::cout << player_name << " hat verloren" << std::endl;
+		}
+	}
+	
+	void update_game_state()
+	{
+		stones -= move;
+	}
+	
 public:
-	takegame_impl():gameover(false), stones(23)
+	takegame_impl(): stones(23)
 	{
 	}
 
@@ -55,7 +81,7 @@ public:
 
 	void play() override
 	{
-		while( ! gameover)
+		while( ! is_gameover())
 		{
 			do_moves();
 		}
