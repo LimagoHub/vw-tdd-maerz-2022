@@ -18,5 +18,10 @@ public:
 		const std::string prefix = "PREFIX: ";
 		appender.write( prefix + message);
 	}
+
+	int log(int i)
+	{
+		return 42;
+	}
 };
 

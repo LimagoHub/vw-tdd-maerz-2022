@@ -6,6 +6,7 @@ class person
 	std::string id;
 	std::string vorname;
 	std::string nachname;
+
 public:
 
 	person( const std::string vorname = "John", const std::string nachname= "Doe")
