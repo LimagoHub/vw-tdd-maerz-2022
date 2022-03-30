@@ -7,7 +7,7 @@ class ConsoleAppender :
 public:
 	void write(std::string message) override
 	{
-		std::cout << 
+		std::cout << message << std::endl;
 	}
 };
 

@@ -42,6 +42,7 @@ public:
 	{
 		
 		try {
+			
 			validate_person(p);
 			business_check(p);
 			p.set_id("1");
