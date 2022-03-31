@@ -37,9 +37,9 @@
     <ClInclude Include="computer_player_test.h" />
     <ClInclude Include="DummyClassesForTest.h" />
     <ClInclude Include="Mockplayer.h" />
+    <ClInclude Include="Mockwriter.h" />
     <ClInclude Include="MyAbstractGameDummy.h" />
     <ClInclude Include="pch.h" />
-    <ClInclude Include="WriterMock.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\packages\gmock.1.11.0\lib\native\src\gtest\src\gtest_main.cc" />

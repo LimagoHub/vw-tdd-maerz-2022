@@ -1,5 +1,8 @@
 #include "AbstractGameTest.h"
 
+
+
+
 TEST_F(AbstractGameTest, play_success)
 {
 
@@ -10,7 +13,7 @@ TEST_F(AbstractGameTest, play_success)
 			return DummyMove{};
 		});
 
-	EXPECT_CALL(writer_mock, write(Eq("MockPlayer hat verloren.\n")));
+	EXPECT_CALL(writer_mock, write(Eq("MockPlayer hat verloren")));
 
 	object_under_test.play();
 }
@@ -18,7 +21,7 @@ TEST_F(AbstractGameTest, play_success)
 TEST_F(AbstractGameTest, play_mogeln)
 {
 
-	object_under_test.valid = false;
+	object_under_test.is_move_valid = false;
 
 	EXPECT_CALL(game_player_mock, do_move(_)).WillRepeatedly([this](DummyBoard d)
 		{
@@ -26,8 +29,9 @@ TEST_F(AbstractGameTest, play_mogeln)
 			return DummyMove{};
 		});
 
-	EXPECT_CALL(writer_mock, write(Eq("ungueltiger Zug \n"))).WillOnce([this](std::string s) { object_under_test.valid = true; });
-	EXPECT_CALL(writer_mock, write(Eq("MockPlayer hat verloren.\n")));
+	EXPECT_CALL(writer_mock, write(Eq("Ungueltiger Zug!"))).WillOnce([this](std::string s) { object_under_test.is_move_valid = true; });
+	EXPECT_CALL(writer_mock, write(Eq("MockPlayer hat verloren")));
 
 	object_under_test.play();
 }
+

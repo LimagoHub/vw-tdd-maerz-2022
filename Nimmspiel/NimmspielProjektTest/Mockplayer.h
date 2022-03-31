@@ -1,12 +1,13 @@
 #pragma once
-#include "DummyClassesForTest.h"
-#include "../Nimmspiel/player.h"
 #include "gtest/gtest.h"
 #include "gmock/gmock.h"
+#include "DummyClassesForTest.h"
+#include "../Nimmspiel/player.h"
 
 
 
-class GamePlayerMock : public player<DummyBoard, DummyMove>
+
+class Mockplayer : public player<DummyBoard, DummyMove>
 {
 public:
 	MOCK_METHOD(std::string, get_name, (), (const, override));
