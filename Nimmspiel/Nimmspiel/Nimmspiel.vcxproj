@@ -142,13 +142,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="consolen_writer.cpp" />
     <ClCompile Include="game_client.cpp" />
     <ClCompile Include="Nimmspiel.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AbstractGame.h" />
+    <ClInclude Include="abstract_takegame_player.h" />
+    <ClInclude Include="abstrcat_player.h" />
+    <ClInclude Include="computer_player.h" />
+    <ClInclude Include="consolen_writer.h" />
     <ClInclude Include="game.h" />
     <ClInclude Include="game_client.h" />
+    <ClInclude Include="human_player.h" />
+    <ClInclude Include="player.h" />
     <ClInclude Include="takegame_impl.h" />
+    <ClInclude Include="writer.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

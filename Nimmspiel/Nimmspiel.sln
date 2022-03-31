@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Nimmspiel", "Nimmspiel\Nimmspiel.vcxproj", "{BEEFBA6B-1720-4B65-859B-E43E57277738}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NimmspielProjekt", "Nimmspiel\Nimmspiel.vcxproj", "{BEEFBA6B-1720-4B65-859B-E43E57277738}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "NimmspielProjektTest", "NimmspielProjektTest\NimmspielProjektTest.vcxproj", "{4C797E61-E0B4-4ED8-AB15-5048A9E57A78}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,14 @@ Global
 		{BEEFBA6B-1720-4B65-859B-E43E57277738}.Release|x64.Build.0 = Release|x64
 		{BEEFBA6B-1720-4B65-859B-E43E57277738}.Release|x86.ActiveCfg = Release|Win32
 		{BEEFBA6B-1720-4B65-859B-E43E57277738}.Release|x86.Build.0 = Release|Win32
+		{4C797E61-E0B4-4ED8-AB15-5048A9E57A78}.Debug|x64.ActiveCfg = Debug|x64
+		{4C797E61-E0B4-4ED8-AB15-5048A9E57A78}.Debug|x64.Build.0 = Debug|x64
+		{4C797E61-E0B4-4ED8-AB15-5048A9E57A78}.Debug|x86.ActiveCfg = Debug|Win32
+		{4C797E61-E0B4-4ED8-AB15-5048A9E57A78}.Debug|x86.Build.0 = Debug|Win32
+		{4C797E61-E0B4-4ED8-AB15-5048A9E57A78}.Release|x64.ActiveCfg = Release|x64
+		{4C797E61-E0B4-4ED8-AB15-5048A9E57A78}.Release|x64.Build.0 = Release|x64
+		{4C797E61-E0B4-4ED8-AB15-5048A9E57A78}.Release|x86.ActiveCfg = Release|Win32
+		{4C797E61-E0B4-4ED8-AB15-5048A9E57A78}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -2,111 +2,42 @@
 #include <iostream>
 #include <vector>
 #include <string>
-#include "game.h"
-class takegame_impl: public game
+#include "player.h"
+#include "AbstractGame.h"
+#include "writer.h"
+class takegame_impl: public AbstractGame<int, int>
 {
 	
-	int stones;
-	int move;
-
-	bool is_gameover() const
-	{
-		return stones < 1;
-	}
-
-	void do_moves()
-	{
-		spielerzug();
-		computerzug();
-	}
-
-	void computerzug()
-	{
-		if (is_gameover()) return;
-		
-		std::vector<int> moves{ 3,1,1,2 };
-		
-		
-		move = moves[stones % 4];
-		print("Computer nimmt " + std::to_string(move) + " Steine.");
-		terminate_move("Computer");
-	}
-
 	
 
-	void spielerzug()
+protected:
+	bool is_gameover() const override
 	{
-		if (is_gameover()) return;
-		execute_move();
-		terminate_move("Spieler");
-		
+		return board < 1 || get_players().empty();
 	}
 
-	void execute_move()
-	{
-		do
-		{
-			players_move();
-		} while (move_is_not_valid());
-		
-		
-	}
-
-	void players_move()
-	{
-		print("Es gibt " + std::to_string(stones) + " Steine. Bitte nehmen Sie 1,2 oder 3!");
-		std::cin >> move;
-	}
-
-	
-
-	bool move_is_not_valid() const
-	{
-		if (is_valid()) return false;
-		print("Ungueltiger Zug!");
-		return true;
-	}
-
-
-	void terminate_move(const std::string &player_name)
-	{
-		update_game_state();
-		show_gameover_message_when_game_is_over(player_name);
-	}
-	void show_gameover_message_when_game_is_over(const std::string &player_name)
-	{
-		if (is_gameover())
-		{
-			print(player_name + " hat verloren");
-		}
-	}
-	bool is_valid() const
+	bool is_valid() const override
 	{
 		return move >= 1 && move <= 3;
 	}
-	void update_game_state()
+
+	void update_game_state() override
 	{
-		stones -= move;
+		board -= move;
 	}
 
-	void print(const std::string &message) const
+
+	void do_something() override
 	{
-		std::cout << message << std::endl;
+		print(get_current_player()->get_name() + " ist am Zug");
 	}
-	
 public:
-	takegame_impl(): stones(23)
+	takegame_impl(Writer & w): AbstractGame<int, int>(w)
 	{
+		board = 23;
 	}
+
 
 	
-
-	void play() override
-	{
-		while( ! is_gameover())
-		{
-			do_moves();
-		}
-	}
 };
 

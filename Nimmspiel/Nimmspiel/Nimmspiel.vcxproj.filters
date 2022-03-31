@@ -22,12 +22,24 @@
     <Filter Include="games\takegame">
       <UniqueIdentifier>{de429a86-9145-479b-b671-80b015fce708}</UniqueIdentifier>
     </Filter>
+    <Filter Include="writer">
+      <UniqueIdentifier>{f3c6df21-42b1-4e76-90db-73d01be0d557}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="games\takegame\takegame_player">
+      <UniqueIdentifier>{119eb596-1c8c-43b1-976f-57feb0e10cd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="games\players">
+      <UniqueIdentifier>{e69baa2a-0542-4b9a-b6da-3b39b5da7d38}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Nimmspiel.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
     <ClCompile Include="game_client.cpp">
+      <Filter>Quelldateien</Filter>
+    </ClCompile>
+    <ClCompile Include="consolen_writer.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
   </ItemGroup>
@@ -40,6 +52,30 @@
     </ClInclude>
     <ClInclude Include="takegame_impl.h">
       <Filter>games\takegame</Filter>
+    </ClInclude>
+    <ClInclude Include="human_player.h">
+      <Filter>games\takegame\takegame_player</Filter>
+    </ClInclude>
+    <ClInclude Include="computer_player.h">
+      <Filter>games\takegame\takegame_player</Filter>
+    </ClInclude>
+    <ClInclude Include="abstract_takegame_player.h">
+      <Filter>games\takegame\takegame_player</Filter>
+    </ClInclude>
+    <ClInclude Include="player.h">
+      <Filter>games\players</Filter>
+    </ClInclude>
+    <ClInclude Include="abstrcat_player.h">
+      <Filter>games\players</Filter>
+    </ClInclude>
+    <ClInclude Include="AbstractGame.h">
+      <Filter>games</Filter>
+    </ClInclude>
+    <ClInclude Include="writer.h">
+      <Filter>writer</Filter>
+    </ClInclude>
+    <ClInclude Include="consolen_writer.h">
+      <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
